@@ -1,4 +1,4 @@
-import mysql.connector ## does not support for pandas
+# import mysql.connector ## does not support for pandas
 import pandas as pd
 from sqlalchemy import create_engine
 
