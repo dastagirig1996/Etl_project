@@ -1,6 +1,7 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.utils.dates import days_ago
+# from airflow.utils.dates import days_ago
+import pendulum
 import sys
 import os
 
@@ -27,7 +28,8 @@ dag = DAG(
     default_args=default_args,
     description='An ETL pipeline for e-commerce data',
     schedule_interval='@daily',
-    start_date=days_ago(1),
+    # start_date=days_ago(1),
+    start_date= pendulum.today('UTC').add(days=-1)
 )
 
 extract_task = PythonOperator(
