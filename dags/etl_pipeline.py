@@ -27,7 +27,7 @@ dag = DAG(
     'etl_pipeline',
     default_args=default_args,
     description='An ETL pipeline for e-commerce data',
-    schedule_interval='@daily',
+    schedule='@daily',
     # start_date=days_ago(1),
     start_date= pendulum.today('UTC').add(days=-1)
 )
