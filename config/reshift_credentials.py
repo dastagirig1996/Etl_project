@@ -1,0 +1,5 @@
+REDSHIFT_DBNAME = 'yourdbname'
+REDSHIFT_USER = 'yourusername'
+REDSHIFT_PASSWORD = 'yourpassword'
+REDSHIFT_HOST = 'your-redshift-cluster-endpoint'
+REDSHIFT_PORT = '5439'
