@@ -13,7 +13,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 
 from scripts.data_extraction import extract_data
 from scripts.data_transmission import transform_data
-from scripts.data_validation import load_data
+from scripts.data_load import load_data
 
 default_args = {
     'owner': 'airflow',
