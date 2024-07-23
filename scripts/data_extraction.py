@@ -2,9 +2,22 @@
 import pandas as pd
 from sqlalchemy import create_engine
 import sys
-sys.path.append("Finance_EtL_Project")
+import os 
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+config_path = os.path.join(project_root, 'config')
+sys.path.append(config_path)
 
-from config.aws_credentials import get_mysql_secrets
+# Diagnostics
+print("Current Working Directory:", os.getcwd())
+print("sys.path:", sys.path)
+
+try:
+    from aws_credentials import get_mysql_secrets
+    print("Import successful")
+except ModuleNotFoundError as e:
+    print("Import failed:", e)
+
+from aws_credentials import get_mysql_secrets
 
 def extract_data():
     query = "select * from customers"
@@ -19,5 +32,5 @@ def extract_data():
     df = pd.read_sql_query(query, connection)
     df.to_csv("Finance_EtL_Project/data/customers_db.csv", index = False)
     print("extraction done")
-# extract_data()
+extract_data()
 # C:\PROFFESSION\Data_Engneer_Projects\Finance_EtL_Project\data
