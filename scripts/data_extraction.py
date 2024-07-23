@@ -32,5 +32,5 @@ def extract_data():
     df = pd.read_sql_query(query, connection)
     df.to_csv("Finance_EtL_Project/data/customers_db.csv", index = False)
     print("extraction done")
-extract_data()
+#extract_data()
 # C:\PROFFESSION\Data_Engneer_Projects\Finance_EtL_Project\data
