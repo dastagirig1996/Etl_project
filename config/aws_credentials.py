@@ -17,9 +17,9 @@ def get_mysql_secrets():
     
     secret = get_secret_value_response['SecretString']
     return json.loads(secret)
-#     creds = json.loads(secret)
-#     print(creds)
-# get_mysql_secrets()
+  #  creds = json.loads(secret)
+ #   print(creds)
+#get_mysql_secrets()
 
 def get_secrets():
     cred_secret = os.getenv("aws_cred_secret")

@@ -5,15 +5,17 @@ import pendulum
 import sys
 import os
 
-print(os.__file__)
-# from air
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+config_path = os.path.join(project_root, 'scripts')
+sys.path.append(config_path)
 
-# Add scripts directory to path
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+# Diagnostics
+print("Current Working Directory:", os.getcwd())
+print("sys.path:", sys.path)
 
-from scripts.data_extraction import extract_data
-from scripts.data_transmission import transform_data
-from scripts.data_load import load_data
+from data_extraction import extract_data
+from data_transmission import transform_data
+from data_load import load_data
 
 default_args = {
     'owner': 'airflow',

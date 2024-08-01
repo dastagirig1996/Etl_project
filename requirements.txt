@@ -1,2 +1,5 @@
 apache-airflow
 pandas
+sqlalchemy
+pymysql
+boto3
